@@ -46,6 +46,13 @@ export default $config({
         //   name: "example.com",
         //   dns: sst.cloudflare.dns(),
         // },
+        healthCheck: {
+          path: "/ping",
+          interval: "10 seconds",
+          timeout: "5 seconds",
+          healthyThreshold: 2,
+          unhealthyThreshold: 3,
+        },
         public: true,
         ports: [
           { listen: "80/http", forward: "8080/http" },
