@@ -49,6 +49,7 @@ export default $config({
         public: true,
         ports: [
           { listen: "80/http", forward: "8080/http" },
+          // Custom domain is required when using HTTPS
           // { listen: "443/https", forward: "8080/http" },
         ],
       },
