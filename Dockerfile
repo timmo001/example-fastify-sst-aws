@@ -4,6 +4,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 COPY . /app
 WORKDIR /app
+RUN corepack install
 
 FROM base AS prod-deps
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
@@ -19,3 +20,5 @@ COPY --from=build /app/dist /app/dist
 EXPOSE 8080
 
 CMD ["pnpm", "start"]
+
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl --fail http://localhost:8080/health || exit 1
