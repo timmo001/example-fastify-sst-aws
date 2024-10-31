@@ -1,0 +1,25 @@
+{
+  "name": "example-fastify-sst-aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc",
+    "prestart": "npm run compile",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@8.8.0+sha512.798e6b322669ce63c8da856bd62ad1f7b6f36f4dfaa0ac025af2bdd700d09dd5dca943e5cad3edac5d1b3baebc4b2c3fb80fbb8537f936733c32be2ec7805144",
+  "dependencies": {
+    "fastify": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^20.1.3",
+    "@types/node": "^22.8.5",
+    "typescript": "^5.6.3"
+  }
+}
