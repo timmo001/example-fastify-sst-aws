@@ -1,5 +1,10 @@
+# Node
 node_modules/
 dist/
+
+# dotenv
+.env
+!*.env.example
 
 # sst
 .sst
