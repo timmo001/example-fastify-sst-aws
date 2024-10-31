@@ -35,10 +35,16 @@ server.get("/ping", async (_request, _reply) => {
   return "pong\n";
 });
 
-server.listen({ port: PORT }, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
+server.listen(
+  {
+    host: "0.0.0.0",
+    port: PORT,
+  },
+  (err, address) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
   }
-  console.log(`Server listening at ${address}`);
-});
+);
