@@ -1,4 +1,4 @@
-# Exmaple Fastify API App with SST Deployment to AWS
+# Example Fastify API App with SST Deployment to AWS
 
 This is an example Fastify API app that is deployed to AWS using [SST](https://sst.dev/).
 
