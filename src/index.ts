@@ -1,5 +1,5 @@
-import { Resource } from "sst";
-import { Cluster } from "ioredis";
+// import { Resource } from "sst";
+// import { Cluster } from "ioredis";
 import fastify from "fastify";
 
 const PORT = 8080;

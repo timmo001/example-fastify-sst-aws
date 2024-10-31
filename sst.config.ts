@@ -42,21 +42,20 @@ export default $config({
 
     cluster.addService("ExampleFastifyService", {
       loadBalancer: {
-        ports: [{ listen: "80/http", forward: "8080/http" }],
+        // domain: {
+        //   name: "example.com",
+        //   dns: sst.cloudflare.dns(),
+        // },
+        public: true,
+        ports: [
+          { listen: "80/http", forward: "8080/http" },
+          // { listen: "443/https", forward: "8080/http" },
+        ],
       },
       dev: {
         command: "node --watch dist/index.js",
       },
       // link: [redis],
     });
-
-    // const apiGateway = new sst.aws.ApiGatewayV2("ExampleFastifyApiGateway", {
-    //   cors: true,
-    //   accessLog: {
-    //     retention: "1 month",
-    //   },
-    // });
-
-    // apiGateway.route("GET /", cluster);
   },
 });

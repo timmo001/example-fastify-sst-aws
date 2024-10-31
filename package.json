@@ -9,8 +9,8 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "deploy:dev": "pnpm run build && pnpm dlx sst@latest deploy --stage development",
-    "deploy:prod": "pnpm run build && pnpm dlx sst@latest deploy --stage production",
+    "deploy:dev": "pnpm dlx sst@latest deploy --stage development",
+    "deploy:prod": "pnpm dlx sst@latest deploy --stage production",
     "dev": "pnpm run build && pnpm dlx sst@latest dev",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
