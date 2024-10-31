@@ -38,7 +38,7 @@ export default $config({
   async run() {
     const vpc = new sst.aws.Vpc("ExampleFastifyVpc", { bastion: true });
     const cluster = new sst.aws.Cluster("ExampleFastifyCluster", { vpc });
-    const redis = new sst.aws.Redis("ExampleFastifyRedis", { vpc });
+    // const redis = new sst.aws.Redis("ExampleFastifyRedis", { vpc });
 
     cluster.addService("ExampleFastifyService", {
       loadBalancer: {
@@ -47,7 +47,7 @@ export default $config({
       dev: {
         command: "node --watch dist/index.js",
       },
-      link: [redis],
+      // link: [redis],
     });
 
     // const apiGateway = new sst.aws.ApiGatewayV2("ExampleFastifyApiGateway", {

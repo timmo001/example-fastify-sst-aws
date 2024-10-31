@@ -9,6 +9,8 @@
   "license": "ISC",
   "scripts": {
     "compile": "tsc",
+    "deploy:dev": "pnpm run compile && pnpm dlx sst@latest deploy --stage development",
+    "deploy:prod": "pnpm run compile && pnpm dlx sst@latest deploy --stage production",
     "dev": "pnpm run compile && pnpm dlx sst@latest dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
